@@ -48,6 +48,16 @@ button:hover {
   background: #4338ca;
 }
 
+#search-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
 #todo-list {
   list-style: none;
   padding: 0;
@@ -74,6 +84,19 @@ button:hover {
 .todo-item.done span {
   text-decoration: line-through;
   color: #98a2b3;
+}
+
+.delete-btn {
+  background: transparent;
+  color: #98a2b3;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #fee4e2;
+  color: #d92d20;
 }
 
 .empty {
