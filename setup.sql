@@ -1,9 +1,11 @@
 -- Supabase 대시보드 > SQL Editor 에 붙여넣고 Run 하세요.
+-- 이미 todos 테이블이 있는 프로젝트라면 이 파일 대신 migration_weekly.sql만 실행하세요.
 
 create table todos (
   id bigint generated always as identity primary key,
   task text not null check (char_length(trim(task)) > 0 and char_length(task) <= 200),
   is_complete boolean default false,
+  task_date date not null default current_date,
   created_at timestamptz default now()
 );
 

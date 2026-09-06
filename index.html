@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>할 일 목록</title>
+  <title>주간 목록</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main>
-    <h1>할 일 목록</h1>
+    <h1 id="week-heading">주간 목록</h1>
 
     <form id="todo-form">
       <input id="todo-input" type="text" placeholder="할 일을 입력하세요" autocomplete="off" required />
+      <select id="day-select"></select>
       <button type="submit">추가</button>
     </form>
 
     <input id="search-input" type="text" placeholder="검색..." autocomplete="off" />
 
-    <ul id="todo-list"></ul>
+    <div id="week-grid" class="week-grid"></div>
   </main>
 
   <!-- Supabase JS 라이브러리 (CDN, 빌드 도구 불필요) -->

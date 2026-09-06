@@ -8,7 +8,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 420px;
+  max-width: 980px;
   background: white;
   border-radius: 12px;
   padding: 24px;
@@ -23,7 +23,7 @@ h1 {
 #todo-form {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 #todo-input {
@@ -32,6 +32,14 @@ h1 {
   border: 1px solid #d0d5dd;
   border-radius: 8px;
   font-size: 14px;
+}
+
+#day-select {
+  padding: 10px 8px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
 }
 
 button {
@@ -52,33 +60,76 @@ button:hover {
   width: 100%;
   box-sizing: border-box;
   padding: 8px 12px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   border: 1px solid #d0d5dd;
   border-radius: 8px;
   font-size: 13px;
 }
 
-#todo-list {
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.day-col-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  border-radius: 8px;
+  background: #f4f5f7;
+}
+
+.day-col-header.today {
+  background: #eef0ff;
+}
+
+.day-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+}
+
+.day-col-header.today .day-name {
+  color: #4338ca;
+}
+
+.day-date {
+  font-size: 11px;
+  color: #98a2b3;
+}
+
+.day-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  min-height: 40px;
 }
 
 .todo-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
+  gap: 6px;
+  padding: 8px;
   border: 1px solid #eaecf0;
   border-radius: 8px;
 }
 
 .todo-item span {
   flex: 1;
-  font-size: 14px;
+  font-size: 12.5px;
+  word-break: break-word;
 }
 
 .todo-item.done span {
@@ -89,8 +140,8 @@ button:hover {
 .delete-btn {
   background: transparent;
   color: #98a2b3;
-  padding: 4px 8px;
-  font-size: 16px;
+  padding: 2px 6px;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -100,8 +151,24 @@ button:hover {
 }
 
 .empty {
-  color: #98a2b3;
-  font-size: 14px;
+  color: #c0c6d0;
+  font-size: 12px;
   text-align: center;
-  padding: 12px 0;
+  padding: 8px 0;
+}
+
+@media (max-width: 720px) {
+  #todo-form {
+    flex-wrap: wrap;
+  }
+
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-col-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
 }
